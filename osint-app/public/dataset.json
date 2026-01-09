@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "filename": "image-1.jpg",
+        "correctLon": 25.63225,
+        "correctLat": 43.07303
+    },
+    
+    {
+        "id": 2,
+        "filename": "image-2.jpg",
+        "correctLon": 151.16167,
+        "correctLat": -33.84456
+    },
+
+    {
+        "id": 3,
+        "filename": "image-3.png",
+        "correctLon": 7.72378,
+        "correctLat": 46.49753
+    }
+]

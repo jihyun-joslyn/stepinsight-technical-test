@@ -1,0 +1,59 @@
+<style>
+  .location-image img {
+    max-width: 500px;
+    height: 500px;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+</style>
+
+  <div>
+    <div>
+      <h2>Round {{roundNum + 1}} of {{totalRound}}</h2>
+
+      <button mat-mini-fab aria-label="Home">
+          <mat-icon>home</mat-icon>
+        </button>
+    </div>
+    <div class="location-image">
+      <img [src]="imagePath" alt="Location" />
+
+      <button mat-fab >
+          <mat-icon>zoom_in</mat-icon>
+          Zoom In
+        </button>
+
+        <button mat-fab >
+          <mat-icon>zoom_out</mat-icon>
+          Zoom Out
+        </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Longitude</mat-label>
+        <input type="number" matInput placeholder="Ex. 114.177216" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Latitude</mat-label>
+        <input type="number" matInput placeholder="Ex. 22.302711" value="">
+      </mat-form-field>
+
+      <button mat-flat-button color="warn">Reset</button>
+      <button mat-flat-button>Submit</button>
+    </form>
+
+
+
+  </div>
