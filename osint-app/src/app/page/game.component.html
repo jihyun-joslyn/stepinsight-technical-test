@@ -1,59 +1,60 @@
 <style>
-  .location-image img {
-    max-width: 500px;
-    height: 500px;
-  }
+    .location-image img {
+        max-width: 500px;
+        height: 500px;
+    }
 
-  .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
+    .location-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
 
-  .example-full-width {
-    width: 100%;
-  }
+    .location-input {
+        width: 100%;
+    }
 </style>
 
-  <div>
+<div>
     <div>
-      <h2>Round {{roundNum + 1}} of {{totalRound}}</h2>
-
-      <button mat-mini-fab aria-label="Home">
-          <mat-icon>home</mat-icon>
+        <h2>Round {{roundNum}} of {{totalRound}}</h2>
+        <mat-progress-bar mode="determinate" [value]="currProgress"></mat-progress-bar>
+        <button mat-mini-fab aria-label="Home" (click)="homeBtnHandler()">
+            <mat-icon>home</mat-icon>
         </button>
     </div>
     <div class="location-image">
-      <img [src]="imagePath" alt="Location" />
+        <img [src]="imagePath" alt="Location" />
 
-      <button mat-fab >
-          <mat-icon>zoom_in</mat-icon>
-          Zoom In
+        <button mat-fab>
+            <mat-icon>zoom_in</mat-icon>
+            Zoom In
         </button>
 
-        <button mat-fab >
-          <mat-icon>zoom_out</mat-icon>
-          Zoom Out
+        <button mat-fab>
+            <mat-icon>zoom_out</mat-icon>
+            Zoom Out
         </button>
     </div>
 
     <mat-divider></mat-divider>
 
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Longitude</mat-label>
-        <input type="number" matInput placeholder="Ex. 114.177216" value="">
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <mat-label>Latitude</mat-label>
-        <input type="number" matInput placeholder="Ex. 22.302711" value="">
-      </mat-form-field>
-
-      <button mat-flat-button color="warn">Reset</button>
-      <button mat-flat-button>Submit</button>
+    <form class="location-form" [formGroup]="locationForm">
+        <mat-form-field class="location-input">
+            <mat-label>Latitude</mat-label>
+            <input type="number" matInput placeholder="Ex. 22.302711" formControlName="lat">
+            <mat-error *ngIf="locationForm.get('lat')?.hasError('min') || locationForm.get('lat')?.hasError('max')">
+                The value of latitude should between -90 to 90.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="location-input">
+            <mat-label>Longitude</mat-label>
+            <input type="number" matInput placeholder="Ex. 114.177216" formControlName="lon">
+            <mat-error *ngIf="locationForm.get('lon')?.hasError('min') || locationForm.get('lon')?.hasError('max')">
+                The value of longitude should between -180 to 180.
+            </mat-error>
+        </mat-form-field>
+        <button mat-flat-button color="warn" (click)="resetForm()">Reset</button>
+        <button mat-flat-button (click)="submitForm()">Submit</button>
     </form>
-
-
-
-  </div>
+</div>

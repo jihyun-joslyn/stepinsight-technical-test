@@ -1,14 +1,18 @@
 <style>
+    
 </style>
 
-  <div>
-    <button mat-mini-fab aria-label="Home">
-      <mat-icon>home</mat-icon>
+<div>
+    <button mat-mini-fab aria-label="Home" (click)="homeBtnHandler()">
+        <mat-icon>home</mat-icon>
     </button>
-    <h1 class="mat-headline-1">Round {{roundNum + 1}} result</h1>
-    <p>Marks: {{marks}}</p>
-    <p>Your guess are {{distance}}m far from the correct answer.</p>
+    <h1 class="mat-headline-1">Round {{roundNum}} result</h1>
+    <p>Marks: {{roundResult.points}}</p>
+    <p>Your guess are {{roundResult.distance}}m far from the correct answer.</p>
 
     <p>Map</p>
-    <button mat-flat-button>Next Round</button>
-  </div>
+
+    <map-component [userLongLat]="this.roundResult.userInput" [corrLongLat]="this.corrLoc.coordinates"></map-component>
+    <!-- <map-component></map-component> -->
+    <button mat-flat-button (click)="nextBtnHandler()">Next Round</button>
+</div>
