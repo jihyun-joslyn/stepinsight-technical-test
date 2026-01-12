@@ -11,12 +11,13 @@ import { RoundResult } from '../model/game.model';
 import { ActualLocation } from '../model/location.model';
 import { AppFlowService } from '../service/app-flow.service';
 import { MapComponent } from "../components/map.component";
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
     selector: 'app-result',
-    imports: [MatButtonModule, MatIconModule, MatDividerModule, MatListModule, MatInputModule, MapComponent],
+    imports: [MatButtonModule, MatIconModule, MatDividerModule, MatListModule, MatInputModule, MapComponent, MatCardModule],
     templateUrl: 'result.component.html',
-    //   styleUrl: './app.component.css',
+    styleUrl: 'style/result.component.css',
 
 })
 export class ResultPage {
@@ -39,7 +40,7 @@ export class ResultPage {
         }
     };
 
-    constructor(private http: HttpClient, private router: Router, private gameState: GameStateService, private appFlow : AppFlowService) { }
+    constructor(private http: HttpClient, private router: Router, private gameState: GameStateService, private appFlow: AppFlowService) { }
 
     ngOnInit() {
         this.roundNum = this.gameState.currRound;

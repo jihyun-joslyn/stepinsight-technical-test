@@ -1,0 +1,140 @@
+.game-content {
+    min-height: 100vh;
+    padding: 18px 16px 28px;
+    display: grid;
+    gap: 14px;
+}
+
+.game-topbar {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.round-title {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.home-btn mat-icon {
+    font-size: 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.home-btn button {
+    border-radius: 16px;
+    background-color: #387AFF;
+    color: #F2F6FE;
+    box-shadow: none;
+    padding: 0.75rem;
+    width: 54px !important;
+}
+
+.round-progress {
+    width: 80%;
+}
+
+.game-content-main {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 14px;
+}
+
+.image-section,
+.form-section {
+    display: grid;
+    gap: 10px;
+    margin: 32px 0px;
+    max-width: 700px;
+}
+
+.image-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.location-img {
+    width: 100%;
+    height: auto;
+    max-height: 58vh;
+    object-fit: contain;
+    display: block;
+}
+
+.zoom-controls {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+}
+
+.zoom-btn {
+    opacity: 0.95;
+    box-shadow: none;
+    height: 1.25rem;
+    background-color: #CCCCCC;
+    border-radius: 8px;
+}
+
+.zoom-btn button { 
+    opacity: 0.5;
+}
+
+.form-card {
+    border-radius: 16px;
+    border: 0.5px solid rgba(0, 0, 0, 0.10);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 16px;
+}
+
+.form-title-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.form-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 550;
+}
+
+.location-form {
+    display: grid;
+    
+}
+
+.location-input-div {
+    min-width: 150px;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.location-input {
+    width: 100%;
+    
+}
+
+.location-form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 30%;
+    /* margin-top: 4px; */
+    justify-self: end;
+
+}

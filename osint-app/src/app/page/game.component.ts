@@ -21,7 +21,7 @@ import { AppFlowService } from '../service/app-flow.service';
     selector: 'app-game',
     imports: [CommonModule, MatButtonModule, MatIconModule, MatDividerModule, MatListModule, MatInputModule, ReactiveFormsModule, MatProgressBarModule, MatDialogModule],
     templateUrl: './game.component.html',
-    //   styleUrl: './app.component.css',
+      styleUrl: 'style/game.component.css',
 
 })
 export class GamePage {
@@ -75,6 +75,8 @@ export class GamePage {
 
             if (this.gameState.isPlaying)
                 this.router.navigate(['/result']);
+            else 
+                this.router.navigate(['/end']);
         }
 
         console.log(this.locationForm)

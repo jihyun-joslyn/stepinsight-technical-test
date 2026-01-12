@@ -1,60 +1,78 @@
 <style>
-    .location-image img {
-        max-width: 500px;
-        height: 500px;
-    }
 
-    .location-form {
-        min-width: 150px;
-        max-width: 500px;
-        width: 100%;
-    }
-
-    .location-input {
-        width: 100%;
-    }
 </style>
 
 <div>
-    <div>
-        <h2>Round {{roundNum}} of {{totalRound}}</h2>
-        <mat-progress-bar mode="determinate" [value]="currProgress"></mat-progress-bar>
-        <button mat-mini-fab aria-label="Home" (click)="homeBtnHandler()">
-            <mat-icon>home</mat-icon>
-        </button>
+    <div class="game-content">
+        <header class="game-topbar">
+            <div class="home-btn">
+                <button mat-mini-fab aria-label="Home" (click)="homeBtnHandler()">
+                    <mat-icon>home</mat-icon>
+                </button>
+            </div>
+            <div class="game-round">
+                <h2 class="round-title">Round {{ roundNum }} of {{ totalRound }}</h2>
+                <mat-progress-bar mode="determinate" [value]="currProgress" class="round-progress"></mat-progress-bar>
+            </div>
+        </header>
+        <main class="game-content-main">
+            <section class="image-section">
+                <div class="image-card">
+                    <img [src]="imagePath" alt="Location" class="location-img" />
+                    <!-- <div class="zoom-controls">
+                        <button mat-mini-fab class="zoom-btn" aria-label="Zoom in">
+                            <mat-icon>zoom_in</mat-icon>
+                        </button>
+                        <button mat-mini-fab class="zoom-btn" aria-label="Zoom out">
+                            <mat-icon>zoom_out</mat-icon>
+                        </button>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Form panel -->
+            <section class="form-section">
+                <div class="form-card">
+                    <div class="form-title-row">
+                        <mat-icon>edit_location_alt</mat-icon>
+                        <h3 class="form-title">Enter your guess</h3>
+                    </div>
+
+                    <form class="location-form" [formGroup]="locationForm">
+                        <div class="location-input-div">
+                            <mat-form-field class="location-input" appearance="outline">
+                                <mat-label>Latitude</mat-label>
+                                <input type="number" matInput placeholder="Ex. 22.302711" formControlName="lat">
+                                <mat-error
+                                    *ngIf="locationForm.get('lat')?.hasError('min') || locationForm.get('lat')?.hasError('max')">
+                                    The value of latitude should between -90 to 90.
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="location-input" appearance="outline">
+                                <mat-label>Longitude</mat-label>
+                                <input type="number" matInput  placeholder="Ex. 114.177216" formControlName="lon">
+                                <mat-error
+                                    *ngIf="locationForm.get('lon')?.hasError('min') || locationForm.get('lon')?.hasError('max')">
+                                    The value of longitude should between -180 to 180.
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="location-form-actions">
+                            <button mat-stroked-button color="warn" type="button" (click)="resetForm()">
+                                Reset
+                            </button>
+
+                            <button mat-flat-button color="primary" type="button" (click)="submitForm()">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
     </div>
-    <div class="location-image">
-        <img [src]="imagePath" alt="Location" />
 
-        <button mat-fab>
-            <mat-icon>zoom_in</mat-icon>
-            Zoom In
-        </button>
-
-        <button mat-fab>
-            <mat-icon>zoom_out</mat-icon>
-            Zoom Out
-        </button>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <form class="location-form" [formGroup]="locationForm">
-        <mat-form-field class="location-input">
-            <mat-label>Latitude</mat-label>
-            <input type="number" matInput placeholder="Ex. 22.302711" formControlName="lat">
-            <mat-error *ngIf="locationForm.get('lat')?.hasError('min') || locationForm.get('lat')?.hasError('max')">
-                The value of latitude should between -90 to 90.
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="location-input">
-            <mat-label>Longitude</mat-label>
-            <input type="number" matInput placeholder="Ex. 114.177216" formControlName="lon">
-            <mat-error *ngIf="locationForm.get('lon')?.hasError('min') || locationForm.get('lon')?.hasError('max')">
-                The value of longitude should between -180 to 180.
-            </mat-error>
-        </mat-form-field>
-        <button mat-flat-button color="warn" (click)="resetForm()">Reset</button>
-        <button mat-flat-button (click)="submitForm()">Submit</button>
-    </form>
 </div>

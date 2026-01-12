@@ -1,17 +1,23 @@
-<style>
-</style>
+<div class="end-content">
+    <header class="end-head">
+        <div class="end-title">
+            <mat-icon>emoji_events</mat-icon>
+            <h1 class="end-header-titles">Final Result</h1>
+        </div>
+    </header>
+    <section class="score-card">
+        <p class="score-label">Total points</p>
+        <p class="score">{{ marks }}</p>
+    </section>
+    <div class="actions">
+        <button mat-fab extended color="primary" class="action-btn primary primary-btn" (click)="newGameBtnHandler()">
+            <mat-icon>play_circle</mat-icon>
+            New Game
+        </button>
 
-  <div>
-    <h1 class="mat-headline-1">Final Result</h1>
-    <h2>{{marks}}</h2>
-
-    <button mat-fab extended color="primary" class="fab" (click)="homeBtnHandler()">
-        <mat-icon>home</mat-icon>
-        Home
-    </button>
-
-    <button mat-fab extended color="primary" class="fab" (click)="newGameBtnHandler()">
-        <mat-icon>play_circle</mat-icon>
-        New Game
-    </button>
-  </div>
+        <button mat-fab extended class="action-btn secondary-btn" (click)="homeBtnHandler()">
+            <mat-icon>home</mat-icon>
+            Home
+        </button>
+    </div>
+</div>

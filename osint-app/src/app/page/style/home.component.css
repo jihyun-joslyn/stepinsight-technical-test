@@ -1,0 +1,139 @@
+.home-content {
+    min-height: 100vh;
+    padding: 24px 16px 48px;
+    display: grid;
+    gap: 18px;
+    justify-items: center;
+    width: 50rem;
+    margin: 16px auto;
+}
+
+.home-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 860px;
+}
+
+.start-div {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 16px;
+}
+
+.start-btn {
+    --mdc-extended-fab-label-text-size: 1.1rem;
+    transform: scale(1.12);
+    border-radius: 32px;
+    padding: 32px 16px;
+    background-color: #387AFF;
+    color: white;
+    font-size: 2rem;
+    width: 22.5rem;
+    margin-top: 16px;
+    height: 4.5rem;
+    box-shadow: none;
+}
+
+.start-btn mat-icon {
+    font-size: 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.rules-header {
+    margin: 14px 0 6px;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.rules-sub-header {
+    margin: 10px 0 4px;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.rules-item {
+    margin: 0 0 4px;
+    font-size: 0.85rem;
+    line-height: 1.25;
+    opacity: 0.95;
+    font-size: 200;
+}
+
+.header-card {
+    width: 100%;
+    padding: 32px 28px;
+}
+
+.header-card-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-icon {
+    font-size: 34px;
+    width: 34px;
+    height: 34px;
+}
+
+.headline {
+    margin: 0;
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.header-subtitle {
+    margin: 14px 0px 18px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.rules {
+    width: 100%;
+    max-width: 50rem;
+}
+
+.rules-card {
+    width: 95%;
+    padding: 18px 18px;
+    border-radius: 16px;
+}
+
+.rules-header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.rules-title {
+    margin: 0px;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.rules-header-row mat-icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.rules-content {
+    overflow: auto;
+    padding-right: 6px;
+}
+
+.rules-section {
+    margin: 14px 0 6px;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+

@@ -1,18 +1,55 @@
-<style>
-    
-</style>
+<div class="result-content">
+    <header class="result-topbar">
+        <div class="topbar-title">
+            <h1 class="">Round {{ roundNum }} Result</h1>
+        </div>
+        <button mat-mini-fab aria-label="Home" class="home-btn" (click)="homeBtnHandler()">
+            <mat-icon>home</mat-icon>
+        </button>
+    </header>
+    <section class="result-summary">
+        <mat-card class="result-card" appearance="outlined">
+            <mat-card-header class="card-head">
+                <mat-icon>emoji_events</mat-icon>
+                <p class="card-title">Result</p>
+            </mat-card-header>
+            <mat-card-content>
+                <p class="result-content">You scored <span class="result-value">{{roundResult.points}}</span> in Round
+                    {{roundNum}}.</p>
+                <p class="result-content">Your guess are <span class="result-value">{{ roundResult.distance}}m</span> from
+                    the actual location.</p>
+            </mat-card-content>
+        </mat-card>
+    </section>
+    <section class="">
+        <mat-card class="map-panel" appearance="outlined">
+            <mat-card-header class="card-head">
+                <mat-icon>map</mat-icon>
+                <p class="card-title">Map</p>
+            </mat-card-header>
 
-<div>
-    <button mat-mini-fab aria-label="Home" (click)="homeBtnHandler()">
-        <mat-icon>home</mat-icon>
-    </button>
-    <h1 class="mat-headline-1">Round {{roundNum}} result</h1>
-    <p>Marks: {{roundResult.points}}</p>
-    <p>Your guess are {{roundResult.distance}}m far from the correct answer.</p>
+            <div mat-card-image class="map-frame">
+                <map-component [userLongLat]="roundResult.userInput" [corrLongLat]="corrLoc.coordinates">
+                </map-component>
+            </div>
+            <mat-card-content>
+                <div class="map-legend">
+                    <p class="legend-title">Legend</p>
+                    <p class="legend-content">
+                        <mat-icon>not_listed_location</mat-icon><span>Your guess</span>
+                    </p>
+                    <p class="legend-content">
+                        <mat-icon>where_to_vote</mat-icon><span>Acutal Location</span>
+                    </p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </section>
+    <div class="actions">
+        <button mat-flat-button color="primary" class="next-btn" (click)="nextBtnHandler()">
+            Next round
+            <mat-icon class="end-icon">chevron_right</mat-icon>
+        </button>
+    </div>
 
-    <p>Map</p>
-
-    <map-component [userLongLat]="this.roundResult.userInput" [corrLongLat]="this.corrLoc.coordinates"></map-component>
-    <!-- <map-component></map-component> -->
-    <button mat-flat-button (click)="nextBtnHandler()">Next Round</button>
 </div>

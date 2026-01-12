@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
     selector: 'app-end',
     imports: [MatButtonModule, MatIconModule, MatDividerModule, MatListModule, MatInputModule],
     templateUrl: './end.component.html',
-    //   styleUrl: './app.component.css',
+    styleUrl: 'style/end.component.css',
 
 })
 export class EndPage {
@@ -24,7 +24,7 @@ export class EndPage {
         this.marks = this.gameState.currTotal;
     }
 
-    homeBtnHandler(){
+    homeBtnHandler() {
         this.router.navigate(['/']);
     }
 
