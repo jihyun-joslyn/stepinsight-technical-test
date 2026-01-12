@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { HttpClient } from '@angular/common/http';
-import { MatInputModule } from '@angular/material/input';
 import { GameStateService } from '../service/game-state.service';
 import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-end',
-    imports: [MatButtonModule, MatIconModule, MatDividerModule, MatListModule, MatInputModule],
+    imports: [MatButtonModule, MatIconModule],
     templateUrl: './end.component.html',
     styleUrl: 'style/end.component.css',
 
@@ -18,7 +14,7 @@ import { Router } from '@angular/router';
 export class EndPage {
     marks = 0;
 
-    constructor(private http: HttpClient, private router: Router, private gameState: GameStateService) { }
+    constructor(private router: Router, private gameState: GameStateService) { }
 
     ngOnInit() {
         this.marks = this.gameState.currTotal;

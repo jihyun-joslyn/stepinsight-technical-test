@@ -1,7 +1,3 @@
-<style>
-
-</style>
-
 <div>
     <div class="game-content">
         <header class="game-topbar">
@@ -29,8 +25,6 @@
                     </div> -->
                 </div>
             </section>
-
-            <!-- Form panel -->
             <section class="form-section">
                 <div class="form-card">
                     <div class="form-title-row">
@@ -51,7 +45,7 @@
 
                             <mat-form-field class="location-input" appearance="outline">
                                 <mat-label>Longitude</mat-label>
-                                <input type="number" matInput  placeholder="Ex. 114.177216" formControlName="lon">
+                                <input type="number" matInput placeholder="Ex. 114.177216" formControlName="lon">
                                 <mat-error
                                     *ngIf="locationForm.get('lon')?.hasError('min') || locationForm.get('lon')?.hasError('max')">
                                     The value of longitude should between -180 to 180.

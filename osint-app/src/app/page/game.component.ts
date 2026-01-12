@@ -1,25 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { HttpClient } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
-import { Router } from '@angular/router';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { GameStateService } from '../service/game-state.service';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { MatDialog, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../components/dialog.component';
 import { LongLat } from '../model/location.model';
 import { firstValueFrom } from 'rxjs';
+import { GameStateService } from '../service/game-state.service';
 import { AppFlowService } from '../service/app-flow.service';
 
 
 @Component({
     selector: 'app-game',
-    imports: [CommonModule, MatButtonModule, MatIconModule, MatDividerModule, MatListModule, MatInputModule, ReactiveFormsModule, MatProgressBarModule, MatDialogModule],
+    imports: [CommonModule, MatButtonModule, MatIconModule, MatInputModule, ReactiveFormsModule, MatProgressBarModule],
     templateUrl: './game.component.html',
       styleUrl: 'style/game.component.css',
 
@@ -35,8 +32,7 @@ export class GamePage {
     totalRound = 0;
     currProgress = 0
 
-
-    constructor(private http: HttpClient, private router: Router, private gameState: GameStateService, private dialog: MatDialog, private appFlow: AppFlowService) { }
+    constructor(private router: Router, private gameState: GameStateService, private dialog: MatDialog, private appFlow: AppFlowService) { }
 
     ngOnInit() {
         this.roundNum = this.gameState.currRound;

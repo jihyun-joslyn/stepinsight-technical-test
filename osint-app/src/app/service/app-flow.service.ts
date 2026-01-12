@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { firstValueFrom } from 'rxjs';
 import { GameStateService } from './game-state.service';
 import { DialogComponent } from '../components/dialog.component';
 
@@ -12,7 +11,7 @@ export class AppFlowService {
 
     constructor(private router: Router, private dialog: MatDialog, private gameState: GameStateService) { }
 
-    async homeBtnHandler() : Promise<boolean> {
+    async homeBtnHandler(): Promise<boolean> {
         const ref = this.dialog.open(DialogComponent, {
             data: {
                 title: 'Back To Home',

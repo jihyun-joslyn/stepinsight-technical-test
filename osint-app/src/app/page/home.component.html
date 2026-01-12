@@ -1,58 +1,62 @@
 <div class="home-content">
-  <section class="home-header">
-    <div class="header-card">
-      <div class="header-card-title">
-        <mat-icon class="header-icon">public</mat-icon>
-        <h1 class="headline">OSINT Location Guessing Game</h1>
-      </div>
-      <p class="header-subtitle">
-        Test your OSINT skills by figuring out where in the world each photo was taken.
-      </p>
-      <div class="start-div">
-        <button mat-fab extended color="primary" class="start-btn" (click)="startGame()">
-          <mat-icon>play_circle</mat-icon>
-          Start game
-        </button>
-      </div>
-    </div>
-  </section>
-  <section class="rules">
-    <div class="rules-card">
-      <div class="rules-header-row">
-        <mat-icon>info</mat-icon>
-        <p class="rules-title">Game Rules</p>
-      </div>
-      <div class="rules-content">
-        <p class="rules-header">How to play</p>
-        <p class="rules-sub-header">1. Look closely</p>
-        <p class="rules-item">
-          Each round shows a real-world image. Zoom in and examine details — signs, buildings, landscapes, anything can be a clue.
-        </p>
-        <p class="rules-sub-header">2. Make your guess</p>
-        <p class="rules-item">
-          Enter the latitude and longitude where you think the photo was taken. There is no map for guessing.
-        </p>
-        <p class="rules-sub-header">3. Submit your guess</p>
-        <p class="rules-item">
-          After you submit, we calculate the distance and show a map with your guess, the correct location, and the distance between them.
-        </p>
-        <p class="rules-sub-header">4. Keep going</p>
-        <p class="rules-item">
-          Move on to the next round until all 3 rounds are complete.
-        </p>
-        <p class="rules-header">Scoring</p>
-        <p class="rules-item">
-          Get within 50 metres of the correct location and you score points. The closer you are, the more points you earn (up to 15).
-        </p>
-        <p class="rules-item">
-          Your final score is the total from all three rounds.
-        </p>
-        <p class="rules-header">Game complete</p>
-        <p class="rules-item">
-          At the end, you will see your final score, each round distance, and a summary. You can play again or return home.
-        </p>
-      </div>
-    </div>
-  </section>
+    <section class="home-header">
+        <div class="header-card">
+            <div class="header-card-title">
+                <mat-icon class="header-icon">public</mat-icon>
+                <h1 class="headline">OSINT Location Guessing Game</h1>
+            </div>
+            <p class="header-subtitle">
+                Test your OSINT skills by figuring out where in the world each photo was taken.
+            </p>
+            <div class="start-div">
+                <button mat-fab extended color="primary" class="start-btn" (click)="startGame()">
+                    <mat-icon>play_circle</mat-icon>
+                    Start game
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="rules">
+        <div class="rules-card">
+            <div class="rules-header-row">
+                <mat-icon>info</mat-icon>
+                <p class="rules-title">Game Rules</p>
+            </div>
+            <div class="rules-content">
+                <p class="rules-header">How to play</p>
+                <p class="rules-sub-header">1. Look closely</p>
+                <p class="rules-item">
+                    Each round shows a real-world image. Zoom in and examine details — signs, buildings, landscapes,
+                    anything can be a clue.
+                </p>
+                <p class="rules-sub-header">2. Make your guess</p>
+                <p class="rules-item">
+                    Enter the latitude and longitude where you think the photo was taken. There is no map for guessing.
+                </p>
+                <p class="rules-sub-header">3. Submit your guess</p>
+                <p class="rules-item">
+                    After you submit, we calculate the distance and show a map with your guess, the correct location,
+                    and the distance between them.
+                </p>
+                <p class="rules-sub-header">4. Keep going</p>
+                <p class="rules-item">
+                    Move on to the next round until all 3 rounds are complete.
+                </p>
+                <p class="rules-header">Scoring</p>
+                <p class="rules-item">
+                    Get within 50 metres of the correct location and you score points. The closer you are, the more
+                    points you earn (up to 15).
+                </p>
+                <p class="rules-item">
+                    Your final score is the total from all three rounds.
+                </p>
+                <p class="rules-header">Game complete</p>
+                <p class="rules-item">
+                    At the end, you will see your final score, each round distance, and a summary. You can play again or
+                    return home.
+                </p>
+            </div>
+        </div>
+    </section>
 
 </div>

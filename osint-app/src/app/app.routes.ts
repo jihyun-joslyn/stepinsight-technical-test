@@ -9,5 +9,4 @@ export const routes: Routes = [
     { path: 'game', component: GamePage },
     { path: 'result', component: ResultPage },
     { path: 'end', component: EndPage },
-
 ];

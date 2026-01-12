@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
 import { HttpClient } from '@angular/common/http';
-import { MatInputModule } from '@angular/material/input';
-import { GameStateService } from '../service/game-state.service';
 import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { RoundResult } from '../model/game.model';
 import { ActualLocation } from '../model/location.model';
-import { AppFlowService } from '../service/app-flow.service';
 import { MapComponent } from "../components/map.component";
-import { MatCardModule } from '@angular/material/card';
+import { AppFlowService } from '../service/app-flow.service';
+import { GameStateService } from '../service/game-state.service';
 
 @Component({
     selector: 'app-result',
-    imports: [MatButtonModule, MatIconModule, MatDividerModule, MatListModule, MatInputModule, MapComponent, MatCardModule],
+    imports: [MatButtonModule, MatIconModule, MapComponent, MatCardModule],
     templateUrl: 'result.component.html',
     styleUrl: 'style/result.component.css',
 

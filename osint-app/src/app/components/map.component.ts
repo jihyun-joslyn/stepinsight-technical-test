@@ -1,8 +1,5 @@
 import { AfterViewInit, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { GameStateService } from '../service/game-state.service';
 import * as L from 'leaflet';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { LongLat } from '../model/location.model';
 
 @Component({
@@ -17,9 +14,7 @@ export class MapComponent implements AfterViewInit, OnChanges {
     map?: L.Map;
     layerGrp?: L.LayerGroup;
 
-    constructor(private http: HttpClient, private router: Router, private gameState: GameStateService) { }
-
-    ngOnInit() { }
+    constructor() { }
 
     ngAfterViewInit(): void {
         this.map = L.map('result-map', {
@@ -60,7 +55,6 @@ export class MapComponent implements AfterViewInit, OnChanges {
             iconSize: [24, 24],
             iconAnchor: [12, 24],
         });
-
 
         var userMarker = L.marker([this.userLongLat.lat, this.userLongLat.lon], { icon: guessIcon }).bindPopup('Your guess');
         var corrMarker = L.marker([this.corrLongLat.lat, this.corrLongLat.lon], { icon: actualIcon }).bindPopup('Correct location');
