@@ -5,9 +5,30 @@
             <h1 class="end-header-titles">Final Result</h1>
         </div>
     </header>
-    <section class="score-card">
-        <p class="score-label">Total points</p>
+    <section class="card">
+        <p class="card-header">Total points</p>
         <p class="score">{{ marks | number:'1.2-2' }}</p>
+    </section>
+    <section class="card">
+        <p class="card-header">Round Results</p>
+        <div class="round-result-content">
+                <table mat-table [dataSource]="roundResult" class="mat-elevation-z8">
+                    <ng-container matColumnDef="round">
+                        <th mat-header-cell *matHeaderCellDef>Round</th>
+                        <td mat-cell *matCellDef="let r"> {{r.round}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="points">
+                        <th mat-header-cell *matHeaderCellDef>Points</th>
+                        <td mat-cell *matCellDef="let r"> {{r.points | number:'1.2-2'}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="distance">
+                        <th mat-header-cell *matHeaderCellDef>Distance from actual location</th>
+                        <td mat-cell *matCellDef="let r"> {{r.distance | number:'1.2-2'}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="roundResultKeys"></tr>
+                    <tr mat-row *matRowDef="let row; columns: roundResultKeys;"></tr>
+                </table>
+            </div>
     </section>
     <div class="actions">
         <button mat-fab extended color="primary" class="action-btn primary primary-btn" (click)="newGameBtnHandler()">

@@ -29,14 +29,14 @@
     font-size: 2.5rem;
 }
 
-.score-card {
+.card {
     border-radius: 16px;
     padding: 14px 16px 18px;
     display: grid;
     gap: 8px;
 }
 
-.score-label {
+.card-header {
     margin: 0;
     font-weight: 600;
     opacity: 0.9;
@@ -78,4 +78,8 @@
     box-shadow: none;
     background-color: #F2F6FE;
     font-size: 1.25rem;
+}
+
+.round-result-content .mat-mdc-table {
+    background-color: transparent;
 }

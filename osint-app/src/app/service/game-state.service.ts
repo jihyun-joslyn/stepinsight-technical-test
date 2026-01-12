@@ -76,7 +76,7 @@ export class GameStateService {
         return true;
     }
 
-    resetGame() {
+    async resetGame() : Promise<boolean> {
         this.currGame.id = null;
         this.currGame.startAt = null;
         this.currGame.question = [];
@@ -84,6 +84,8 @@ export class GameStateService {
 
         this.currRound = 0;
         this.currTotal = 0;
+
+        return true;
     }
 
     async nextRound(): Promise<boolean> {
@@ -93,8 +95,8 @@ export class GameStateService {
     }
 
     async newGame(): Promise<boolean> {
-        this.resetGame();
-        this.startGame();
+        var temp = await this.resetGame();
+        var temp1 = await this.startGame();
 
         return true;
     }

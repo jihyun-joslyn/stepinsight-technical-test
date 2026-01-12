@@ -70,27 +70,6 @@
     display: block;
 }
 
-.zoom-controls {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-}
-
-.zoom-btn {
-    opacity: 0.95;
-    box-shadow: none;
-    height: 1.25rem;
-    background-color: #CCCCCC;
-    border-radius: 8px;
-}
-
-.zoom-btn button {
-    opacity: 0.5;
-}
-
 .form-card {
     border-radius: 16px;
     border: 0.5px solid rgba(0, 0, 0, 0.10);

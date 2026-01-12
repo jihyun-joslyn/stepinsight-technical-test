@@ -27,7 +27,7 @@ export class GameDataService {
             });
 
             var temp: GameLeaderboard = {
-                rank: i + 1,
+                rank: 0,
                 total: tempTotal,
                 startAt: finishedGames[i]['startAt'],
                 endAt: finishedGames[i]['endAt'],
@@ -37,6 +37,10 @@ export class GameDataService {
         }
 
         result = _.orderBy(result, r => r.total, 'desc');
+
+        _.forEach(result, (r, i) => {
+            r.rank = i + 1;
+        })
 
         return result;
     }
