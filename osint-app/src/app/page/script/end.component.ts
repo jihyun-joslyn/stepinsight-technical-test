@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { GameStateService } from '../service/game-state.service';
+import { GameStateService } from '../../service/game-state.service';
 import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-end',
     imports: [CommonModule, MatButtonModule, MatIconModule],
-    templateUrl: './end.component.html',
-    styleUrl: 'style/end.component.css',
+    templateUrl: '../end.component.html',
+    styleUrl: '../style/end.component.css',
 
 })
 export class EndPage {

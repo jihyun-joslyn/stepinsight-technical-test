@@ -4,17 +4,17 @@ import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { RoundResult } from '../model/game.model';
-import { ActualLocation } from '../model/location.model';
-import { MapComponent } from "../components/map.component";
-import { AppFlowService } from '../service/app-flow.service';
-import { GameStateService } from '../service/game-state.service';
+import { RoundResult } from '../../model/game.model';
+import { ActualLocation } from '../../model/location.model';
+import { MapComponent } from "../../components/map.component";
+import { AppFlowService } from '../../service/app-flow.service';
+import { GameStateService } from '../../service/game-state.service';
 
 @Component({
     selector: 'app-result',
     imports: [CommonModule, MatButtonModule, MatIconModule, MapComponent, MatCardModule],
-    templateUrl: 'result.component.html',
-    styleUrl: 'style/result.component.css',
+    templateUrl: '../result.component.html',
+    styleUrl: '../style/result.component.css',
 
 })
 export class ResultPage {

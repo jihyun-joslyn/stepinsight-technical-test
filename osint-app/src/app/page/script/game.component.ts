@@ -7,18 +7,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../components/dialog.component';
-import { LongLat } from '../model/location.model';
+import { DialogComponent } from '../../components/dialog.component';
+import { LongLat } from '../../model/location.model';
 import { firstValueFrom } from 'rxjs';
-import { GameStateService } from '../service/game-state.service';
-import { AppFlowService } from '../service/app-flow.service';
+import { GameStateService } from '../../service/game-state.service';
+import { AppFlowService } from '../../service/app-flow.service';
 
 
 @Component({
     selector: 'app-game',
     imports: [CommonModule, MatButtonModule, MatIconModule, MatInputModule, ReactiveFormsModule, MatProgressBarModule],
-    templateUrl: './game.component.html',
-    styleUrl: 'style/game.component.css',
+    templateUrl: '../game.component.html',
+    styleUrl: '../style/game.component.css',
 
 })
 export class GamePage {
@@ -69,8 +69,6 @@ export class GamePage {
 
             this.router.navigate(['/result']);
         }
-
-        console.log(this.locationForm)
     }
 
     async formValidation(userInput: LongLat): Promise<boolean> {

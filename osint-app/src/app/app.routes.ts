@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { HomePage } from './page/home.component';
-import { GamePage } from './page/game.component';
-import { ResultPage } from './page/result.component';
-import { EndPage } from './page/end.component';
+import { HomePage } from './page/script/home.component';
+import { GamePage } from './page/script/game.component';
+import { ResultPage } from './page/script/result.component';
+import { EndPage } from './page/script/end.component';
 
 export const routes: Routes = [
     { path: '', component: HomePage },

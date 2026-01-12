@@ -31,7 +31,6 @@ export class GameStateService {
         this.currGame.question = _.clone(this.datasetService.shuffleQuestions());
 
         this.currGame.id = await this.gameRepositoryService.createGame(this.currGame);
-        
 
         var snap = await this.gameRepositoryService.getGameDataById(this.currGame.id);
         this.currGame.startAt = snap['startAt'];

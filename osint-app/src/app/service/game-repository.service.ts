@@ -54,7 +54,7 @@ export class GameRepositoryService {
         }
     }
 
-    async getAllGameData() : Promise<any | null> {
+    async getAllGameData(): Promise<any | null> {
         var result: any = [];
 
         var gamesRef = collection(this.firestore, 'games');

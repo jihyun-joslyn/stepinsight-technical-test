@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {LongLat } from '../model/location.model';
+import { LongLat } from '../model/location.model';
 import { UtilityService } from './utility.service';
 
 @Injectable({
@@ -10,7 +10,7 @@ export class CalculationService {
     readonly ROUND_MAX_POINTS = 15;
     readonly DISTANCE_WITH_POINTS = 50;
 
-    constructor(private utilityService : UtilityService) { }
+    constructor(private utilityService: UtilityService) { }
 
     haversineMeters(userLat: number, userLon: number, lat: number, lon: number): number {
         const R = 6371000;

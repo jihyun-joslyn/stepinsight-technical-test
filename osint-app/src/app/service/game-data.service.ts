@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { GameLeaderboard} from '../model/game.model';
-import { DatasetService } from './dataset.service';
-import { CalculationService } from './calculation.service';
 import { GameRepositoryService } from './game-repository.service';
 
 @Injectable({
@@ -10,43 +8,35 @@ import { GameRepositoryService } from './game-repository.service';
 
 export class GameDataService {
 
-    constructor(private datasetService: DatasetService, private calculationService: CalculationService, private gameRepositoryService: GameRepositoryService) { }
+    constructor(private gameRepositoryService: GameRepositoryService) { }
 
     async getLeaderboard(): Promise<GameLeaderboard[]> {
         var gameData = await this.gameRepositoryService.getAllGameData();
 
-        var finshedGames = _.filter(gameData, d => {
+        var finishedGames = _.filter(gameData, d => {
             return d['rounds'].length == 3;
         });
 
-        var sortedGames = _.orderBy(finshedGames, d => {
-            var tempTotal: number = 0;
-
-            for (var i = 0; i < d['rounds'].length; i++) {
-                tempTotal = tempTotal + d['rounds']['points'];
-            }
-
-            return tempTotal;
-        }, 'desc');
-
         var result: GameLeaderboard[] = [];
 
-        for (var i = 0; i < sortedGames.length; i++) {
+        for (var i = 0; i < finishedGames.length; i++) {
             var tempTotal: number = 0;
 
-            _.forEach(sortedGames[i]['rounds'], r => {
+            _.forEach(finishedGames[i]['rounds'], r => {
                 tempTotal = tempTotal + r['points'];
             });
 
             var temp: GameLeaderboard = {
                 rank: i + 1,
                 total: tempTotal,
-                startAt: sortedGames[i]['startAt'],
-                endAt: sortedGames[i]['endAt'],
+                startAt: finishedGames[i]['startAt'],
+                endAt: finishedGames[i]['endAt'],
             };
 
             result.push(temp);
         }
+
+        result = _.orderBy(result, r => r.total, 'desc');
 
         return result;
     }
