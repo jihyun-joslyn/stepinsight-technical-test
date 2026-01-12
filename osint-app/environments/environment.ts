@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBnkSnQ3QWmCcuw_fVcF9ZE1dPWOJdI-JU",
+    apiKey: "",
     authDomain: "stepinsight-code-test.firebaseapp.com",
     projectId: "stepinsight-code-test",
     storageBucket: "stepinsight-code-test.firebasestorage.app",
