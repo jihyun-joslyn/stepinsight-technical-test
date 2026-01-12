@@ -100,26 +100,26 @@
     max-width: 50rem;
 }
 
-.rules-card {
-    width: 95%;
+.card {
+    width: 48rem;
     padding: 18px 18px;
     border-radius: 16px;
 }
 
-.rules-header-row {
+.card-header {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.rules-title {
+.card-title {
     margin: 0px;
     font-weight: 800;
     font-size: 1.5rem;
 }
 
-.rules-header-row mat-icon {
+.card-header mat-icon {
     font-size: 1.5rem;
     width: 1.5rem;
     height: 1.5rem;
@@ -136,4 +136,7 @@
     font-size: 1.25rem;
 }
 
+.leaderboard-content .mat-mdc-table {
+    background-color: transparent;
+}
 

@@ -1,23 +1,23 @@
 .result-page {
-  min-height: 100vh;
-  padding: 18px 16px 28px;
-  display: grid;
-  gap: 14px;
-  max-width: 1100px;
-  margin: 0 auto;
+    min-height: 100vh;
+    padding: 18px 16px 28px;
+    display: grid;
+    gap: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .result-topbar {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
 }
 
 .topbar-title h1 {
-  margin: 0;
-  font-weight: 800;
-  font-size: 2rem
+    margin: 0;
+    font-weight: 800;
+    font-size: 2rem
 }
 
 .home-btn mat-icon {
@@ -36,25 +36,25 @@
 }
 
 .home-btn {
-  justify-self: end;
+    justify-self: end;
 }
 
 .result-summary {
-  display: grid;
-  gap: 12px;
+    display: grid;
+    gap: 12px;
 }
 
 .result-card {
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,0.10);
-  background: rgba(255,255,255,0.78);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: rgba(255, 255, 255, 0.78);
 }
 
 .card-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 16px 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 16px 10px 16px;
 }
 
 .card-head mat-icon {
@@ -64,10 +64,10 @@
 }
 
 .card-title {
-  margin: 0;
-  font-weight: 800;
-  font-size: 1.5rem;
-  opacity: 0.9;
+    margin: 0;
+    font-weight: 800;
+    font-size: 1.5rem;
+    opacity: 0.9;
 }
 
 .result-content {
@@ -75,22 +75,22 @@
 }
 
 .result-value {
-  font-size: 1.25rem;
-  font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .map-panel {
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,0.10);
-  background: rgba(255,255,255,0.78);
-  padding: 0px 14px 16px;
-  display: grid;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0px 14px 16px;
+    display: grid;
 }
 
 .map-frame {
-  border-radius: 14px;
-  overflow: hidden;
-  background: rgba(0,0,0,0.03);
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.03);
     margin: 0px 16px;
 }
 
@@ -104,7 +104,7 @@
     margin: 0.7rem 0;
 }
 
-.legend-content{
+.legend-content {
     margin: 0px !important;
 }
 
@@ -118,17 +118,15 @@
     height: 1rem;
 }
 
-
 .actions {
-  display: grid;
-  justify-items: end;
+    display: grid;
+    justify-items: end;
 }
 
 .next-btn {
-  border-radius: 999px;
+    border-radius: 999px;
 }
 
 .end-icon {
-  margin-left: 6px;
+    margin-left: 6px;
 }
-

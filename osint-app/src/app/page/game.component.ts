@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../components/dialog.component';
 import { LongLat } from '../model/location.model';
 import { firstValueFrom } from 'rxjs';
@@ -18,7 +18,7 @@ import { AppFlowService } from '../service/app-flow.service';
     selector: 'app-game',
     imports: [CommonModule, MatButtonModule, MatIconModule, MatInputModule, ReactiveFormsModule, MatProgressBarModule],
     templateUrl: './game.component.html',
-      styleUrl: 'style/game.component.css',
+    styleUrl: 'style/game.component.css',
 
 })
 export class GamePage {
@@ -67,12 +67,7 @@ export class GamePage {
         if (await this.formValidation(userInput)) {
             var temp = await this.gameState.roundComplete(userInput);
 
-            console.log(this.gameState.currGame);
-
-            if (this.gameState.isPlaying)
-                this.router.navigate(['/result']);
-            else 
-                this.router.navigate(['/end']);
+            this.router.navigate(['/result']);
         }
 
         console.log(this.locationForm)
@@ -86,7 +81,7 @@ export class GamePage {
         }
 
         if (userInput.lat > this.MAX_LAT || userInput.lat < this.MIN_LAT) {
-            errorMessage = errorMessage + "The value of latitude should be a float between " + this.MIN_LAT.toString() +  " to " + this.MAX_LAT.toString() + ". ";
+            errorMessage = errorMessage + "The value of latitude should be a float between " + this.MIN_LAT.toString() + " to " + this.MAX_LAT.toString() + ". ";
         }
 
         if (userInput.lon > this.MAX_LON || userInput.lon < this.MIN_LON) {
@@ -117,6 +112,4 @@ export class GamePage {
     async homeBtnHandler() {
         var temp = await this.appFlow.homeBtnHandler();
     }
-
-
 }

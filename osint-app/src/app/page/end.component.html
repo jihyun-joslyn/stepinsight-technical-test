@@ -7,7 +7,7 @@
     </header>
     <section class="score-card">
         <p class="score-label">Total points</p>
-        <p class="score">{{ marks }}</p>
+        <p class="score">{{ marks | number:'1.2-2' }}</p>
     </section>
     <div class="actions">
         <button mat-fab extended color="primary" class="action-btn primary primary-btn" (click)="newGameBtnHandler()">

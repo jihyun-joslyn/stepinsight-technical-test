@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -12,12 +12,13 @@ import { GameStateService } from '../service/game-state.service';
 
 @Component({
     selector: 'app-result',
-    imports: [MatButtonModule, MatIconModule, MapComponent, MatCardModule],
+    imports: [CommonModule, MatButtonModule, MatIconModule, MapComponent, MatCardModule],
     templateUrl: 'result.component.html',
     styleUrl: 'style/result.component.css',
 
 })
 export class ResultPage {
+    isPlaying: boolean = false;
     roundNum = 0;
     roundResult: RoundResult = {
         round: 0,
@@ -37,19 +38,23 @@ export class ResultPage {
         }
     };
 
-    constructor(private http: HttpClient, private router: Router, private gameState: GameStateService, private appFlow: AppFlowService) { }
+    constructor(private router: Router, private gameState: GameStateService, private appFlow: AppFlowService) { }
 
     ngOnInit() {
         this.roundNum = this.gameState.currRound;
+        this.isPlaying = this.gameState.isPlaying;
 
         this.roundResult = this.gameState.currGame.rounds[this.roundNum - 1];
         this.corrLoc = this.gameState.currGame.question[this.roundNum - 1];
     }
 
-    async nextBtnHandler() {
-        var temp = await this.gameState.nextRound();
+    async bottomBtnHandler() {
+        if (this.isPlaying) {
+            var temp = await this.gameState.nextRound();
 
-        this.router.navigate(['/game']);
+            this.router.navigate(['/game']);
+        } else 
+            this.router.navigate(['/end']);
     }
 
     async homeBtnHandler() {

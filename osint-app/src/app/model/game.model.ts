@@ -13,3 +13,10 @@ export type GameSession = {
     question: ActualLocation[];
     rounds: RoundResult[];
 }
+
+export type GameLeaderboard = {
+    rank: number,
+    total: number,
+    startAt: Date | null,
+    endAt: Date | null,
+}

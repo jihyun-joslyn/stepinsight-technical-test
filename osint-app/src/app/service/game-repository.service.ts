@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GameSession } from '../model/game.model';
-import { Firestore, serverTimestamp, doc, updateDoc, addDoc, collection, getDoc, } from '@angular/fire/firestore';
+import { Firestore, serverTimestamp, doc, updateDoc, addDoc, collection, getDoc, getDocs, } from '@angular/fire/firestore';
 
 @Injectable({
     providedIn: 'root'
@@ -52,5 +52,18 @@ export class GameRepositoryService {
                 }
             );
         }
+    }
+
+    async getAllGameData() : Promise<any | null> {
+        var result: any = [];
+
+        var gamesRef = collection(this.firestore, 'games');
+        var snap = await getDocs(gamesRef);
+
+        result = snap.docs.map(d => ({
+            ...d.data()
+        }));
+
+        return result;
     }
 }

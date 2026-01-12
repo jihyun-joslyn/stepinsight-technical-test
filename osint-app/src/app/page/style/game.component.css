@@ -87,7 +87,7 @@
     border-radius: 8px;
 }
 
-.zoom-btn button { 
+.zoom-btn button {
     opacity: 0.5;
 }
 
@@ -113,7 +113,6 @@
 
 .location-form {
     display: grid;
-    
 }
 
 .location-input-div {
@@ -126,7 +125,6 @@
 
 .location-input {
     width: 100%;
-    
 }
 
 .location-form-actions {
@@ -134,7 +132,5 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     width: 30%;
-    /* margin-top: 4px; */
     justify-self: end;
-
 }

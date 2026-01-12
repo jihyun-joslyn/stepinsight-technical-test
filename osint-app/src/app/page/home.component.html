@@ -17,10 +17,10 @@
         </div>
     </section>
     <section class="rules">
-        <div class="rules-card">
-            <div class="rules-header-row">
+        <div class="card">
+            <div class="card-header">
                 <mat-icon>info</mat-icon>
-                <p class="rules-title">Game Rules</p>
+                <p class="card-title">Game Rules</p>
             </div>
             <div class="rules-content">
                 <p class="rules-header">How to play</p>
@@ -55,6 +55,36 @@
                     At the end, you will see your final score, each round distance, and a summary. You can play again or
                     return home.
                 </p>
+            </div>
+        </div>
+    </section>
+    <section class="leaderboard">
+        <div class="card">
+            <div class="card-header">
+                <mat-icon>leaderboard</mat-icon>
+                <p class="card-title">Leaderboard</p>
+            </div>
+            <div class="leaderboard-content">
+                <table mat-table [dataSource]="leaderboard" class="mat-elevation-z8">
+                    <ng-container matColumnDef="rank">
+                        <th mat-header-cell *matHeaderCellDef>Rank</th>
+                        <td mat-cell *matCellDef="let l"> {{l.rank}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="total">
+                        <th mat-header-cell *matHeaderCellDef>Points</th>
+                        <td mat-cell *matCellDef="let l"> {{l.total | number:'1.2-2'}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="startAt">
+                        <th mat-header-cell *matHeaderCellDef>Started At</th>
+                        <td mat-cell *matCellDef="let l"> {{l.startAt.toDate() | date:'yyyy-MM-dd HH:mm:ss'}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="endAt">
+                        <th mat-header-cell *matHeaderCellDef>End At</th>
+                        <td mat-cell *matCellDef="let l"> {{l.endAt.toDate() | date:'yyyy-MM-dd HH:mm:ss'}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="leaderboardKeys"></tr>
+                    <tr mat-row *matRowDef="let row; columns: leaderboardKeys;"></tr>
+                </table>
             </div>
         </div>
     </section>
