@@ -3,8 +3,8 @@
     padding: 24px 16px 48px;
     display: grid;
     gap: 18px;
-    justify-items: center;
-    width: 50rem;
+    /* justify-items: center; */
+    max-width: 50rem;
     margin: 16px auto;
 }
 
@@ -32,7 +32,7 @@
     background-color: #387AFF;
     color: white;
     font-size: 2rem;
-    width: 22.5rem;
+    max-width: 22.5rem;
     margin-top: 16px;
     height: 4.5rem;
     box-shadow: none;
@@ -101,7 +101,7 @@
 }
 
 .card {
-    width: 48rem;
+    max-width: 48rem;
     padding: 18px 18px;
     border-radius: 16px;
 }
@@ -139,4 +139,5 @@
 .leaderboard-content .mat-mdc-table {
     background-color: transparent;
 }
+
 
