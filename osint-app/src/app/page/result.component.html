@@ -17,10 +17,11 @@
                 <p class="result-content">You scored <span class="result-value">{{roundResult.points | number:'1.2-2'
                         }}</span> in Round
                     {{roundNum}}.</p>
-                <p class="result-content">Your guess are <span class="result-value">{{ roundResult.distance |
-                        number:'1.2-2'}}m</span>
-                    from
-                    the actual location.</p>
+                    <p class="result-content">Your guess are <span class="result-value">{{ roundResult.distance |
+                            number:'1.2-2'}}m</span>
+                        from
+                        the actual location.</p>
+                    @if (roundResult.points <= 0) { <p class="result-hint">You are wrong.</p>}
             </mat-card-content>
         </mat-card>
     </section>
@@ -51,9 +52,9 @@
     <div class="actions">
         <button mat-flat-button color="primary" class="next-btn" (click)="bottomBtnHandler()">
             @if (isPlaying) {
-                <span>Next round</span>
+            <span>Next round</span>
             } @else {
-                <span>Final Result</span>
+            <span>Final Result</span>
             }
             <mat-icon class="end-icon">chevron_right</mat-icon>
         </button>
